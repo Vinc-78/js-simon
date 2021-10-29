@@ -5,45 +5,46 @@ let numeriUtente = []
 
 console.log(numeriPc)
 
+
+
 // parte il conteggio di 30 secondi
 
- let contatore = 30;
+/* let contatore = 30;
 
 const clock = setInterval(() => {
-    console.log("mancano ", contatore, "secondi")
-    contatore--;
+   console.log("mancano ", contatore, "secondi")
+   contatore--;
 
-    
+   
 
-    if (contatore === 0) {
+   if (contatore === 0) {
 
-        // azzera il timer e fa la verifica
-        clearInterval(clock);
-        verifica(numeriPc, numeriUtente);
-        
+       // azzera il timer e fa la verifica
+       clearInterval(clock);
+       verifica(numeriPc, numeriUtente);
+       
 
-    }
+   }
 
 }, 1000); 
+*/
 
 
+const chiedi = setTimeout(startChiedi, 30000);
 
-/* const chidi = setTimeout (myFunction, 30000);
+function startChiedi() {
+    // passato il tempo di 30 secondi chiede i numeri e fa la verifica 
+    numeriUtente = ChiediNumeri()
+    console.log(numeriUtente)
+    verifica(numeriPc, numeriUtente);
 
-function myFunction() {
-    
-    
-} */
 
-// chiede i numeri nel mentre il conto alla rovescia va
-numeriUtente = ChiediNumeri()
-console.log(numeriUtente)
-
+}
 
 
 
 // funzione che porta a schermo un allert di 5 numeri in forma leggibile 
-//e mantiene un array degli stessi umeri 
+//e mantiene un array degli stessi numeri 
 
 function numeriEstratti() {
 
@@ -63,7 +64,7 @@ function numeriEstratti() {
     numeriDaVisualizzare = numeriDaVisualizzare.replaceAll(",", "  ")
 
 
-    alert("hai 30 secondi, vediamo quanti numeri ricordi  i numeri che devi ricordare sono:    " + numeriDaVisualizzare)
+    alert("vediamo quanti numeri ricordi  i numeri che devi ricordare sono:    " + numeriDaVisualizzare)
 
     return numeriEstratti;
 
